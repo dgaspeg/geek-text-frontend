@@ -1,3 +1,43 @@
+<button type="button" mat-raised-button (click)="logIn()">LogIn</button>
+<button type="button" mat-raised-button (click)="authorize()">Authorize</button>
+<button type="button" mat-raised-button (click)="own()">Own</button>
 <p>
-  comment-post works!
+  logged: {{ isLogIn }}<br>
+  authorized: {{ isAuthorized }}<br>
+  owns this book: {{ isOwned}}<br>
 </p>
+<mat-card *ngIf=" isLogIn && isOwned">
+  <div>
+    <mat-button-toggle-group  class="rates" #group="matButtonToggleGroup">
+        <mat-button-toggle value="1.0">
+          <mat-icon class="star">grade</mat-icon>
+        </mat-button-toggle>
+        <mat-button-toggle value="2.0">
+          <mat-icon class="star">grade</mat-icon>
+        </mat-button-toggle>
+        <mat-button-toggle value="3.0">
+          <mat-icon class="star">grade</mat-icon>
+        </mat-button-toggle>
+        <mat-button-toggle value="4.0">
+          <mat-icon class="star">grade</mat-icon>
+        </mat-button-toggle>
+        <mat-button-toggle value="5.0">
+          <mat-icon class="star">grade</mat-icon>
+        </mat-button-toggle>
+      </mat-button-toggle-group>
+  </div>
+  <div class="hidden">
+      Visibility
+      <mat-slide-toggle color="primary" [(ngModel)]="anonymous"></mat-slide-toggle>
+      <div *ngIf="anonymous">By: Anonymous</div>
+      <div *ngIf="!anonymous">By: {{user}}</div>
+    </div>
+
+  <mat-form-field>
+    <input matInput type="text" placeholder="Title" [(ngModel)]="inputTitle">
+  </mat-form-field>
+  <mat-form-field>
+    <textarea matInput rows="3" placeholder="Your comment" [(ngModel)]="inputData"></textarea>
+  </mat-form-field>
+  <button type="button" color="primary" mat-raised-button (click)="onAddPost()">Submit Comment</button>
+</mat-card>
