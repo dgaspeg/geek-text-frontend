@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { CommentPostComponent } from './comments/comment-post/comment-post.component';
+import { BookDetailComponent } from './book-detail/book-detail.component';
 
 const routes: Routes = [
   {path: 'viewBook',
-  component: CommentPostComponent}
+  component: BookDetailComponent}
 ];
 
 @NgModule({

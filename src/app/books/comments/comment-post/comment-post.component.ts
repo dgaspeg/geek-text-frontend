@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { Comment } from '../comment.model';
+
 @Component({
   selector: 'app-comment-post',
   templateUrl: './comment-post.component.html',
