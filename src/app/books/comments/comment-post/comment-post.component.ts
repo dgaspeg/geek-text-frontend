@@ -9,33 +9,36 @@ import { Comment } from '../comment.model';
 })
 export class CommentPostComponent implements OnInit {
 
+  @Output() postCreated = new EventEmitter<Comment>();
+
+  isAuthorized = false;
+  isOwned = true;
+  isLogIn = true;
+
+  bookId = 0;
+  anonymous = false;
+  email = 'jguim002';
+  inputTitle = '';
+  inputData = '';
+  bookRating: number;
+
   constructor() { }
 
   ngOnInit() {
   }
 
-  @Output() postCreated = new EventEmitter();
-
-  isAuthorized = false;
-  isOwned = true;
-  isLogIn = true;
-  canEdit = false;
-
-  anonymous = false;
-  user = 'jguim002';
-  inputTitle = '';
-  inputData = '';
 
   onAddPost()
   {
-    const post =
+    const post: Comment =
     {
-      nickname: this.user,
-      isHidden: this.anonymous,
+      bookID: this.bookId,
       title: this.inputTitle,
-      content: this.inputData
+      comment: this.inputData,
+      email: this.email,
+      isHidden: this.anonymous,
+      rating: this.bookRating
     };
-    this.canEdit = true;
     this.postCreated.emit(post);
   }
 
@@ -44,7 +47,9 @@ export class CommentPostComponent implements OnInit {
     if(this.isAuthorized)
     {
       this.isAuthorized = false;
-    }else{
+    }
+    else
+    {
       this.isAuthorized = true;
     }
   }
