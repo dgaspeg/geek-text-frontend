@@ -1,3 +1,4 @@
+import { Comment } from './../comment.model';
 import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
@@ -9,7 +10,8 @@ export class CommentListComponent implements OnInit {
 
   constructor() { }
 
-  @Input() posts = [];
+  @Input() posts: Comment[] = [];
+
 
   ngOnInit() {
   }

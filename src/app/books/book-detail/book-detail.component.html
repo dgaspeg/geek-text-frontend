@@ -6,6 +6,9 @@
     <mat-icon class="example-icon" aria-hidden="false" aria-label="Example delete icon">delete</mat-icon>
   </mat-toolbar-row>
 </mat-toolbar>
-<router-outlet></router-outlet>
-<app-comment-post (postCreated)="onPostAdded($event)"></app-comment-post>
-<app-comment-list [posts] = "storedPosts"></app-comment-list>
+
+<div class="coments-ratings">
+  <app-comment-post (postCreated)="onPostAdded($event)"></app-comment-post>
+  <app-comment-list [posts] = "storedPosts"></app-comment-list>
+</div>
+
