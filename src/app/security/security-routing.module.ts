@@ -2,6 +2,12 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { SignupComponent } from './signup/signup.component';
 import { LoginComponent } from './login/login.component';
+import {
+  MatIconModule,
+  MatFormFieldModule,
+  MatInputModule,
+  MatButtonModule
+} from '@angular/material';
 
 const routes: Routes = [{
   path: 'signup',
@@ -16,7 +22,11 @@ const routes: Routes = [{
     RouterModule.forChild(routes)
   ],
   exports: [
-    RouterModule
+    RouterModule,
+    MatIconModule,
+    MatInputModule,
+    MatFormFieldModule,
+    MatButtonModule
   ],
 })
 export class SecurityRoutingModule { }

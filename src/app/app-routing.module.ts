@@ -8,7 +8,6 @@ const routes: Routes = [
 ];
 
 const config: ExtraOptions = {
-  enableTracing: true,
   scrollPositionRestoration: 'enabled',
   preloadingStrategy: PreloadAllModules
 };
