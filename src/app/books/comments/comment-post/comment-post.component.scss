@@ -1,0 +1,32 @@
+
+
+mat-form-field,
+textarea
+{
+  width:100%;
+  resize: none;
+  max-height: 100px;
+
+}
+
+.star
+{
+  color: goldenrod;
+}
+
+.hidden
+{
+  float: left;
+  margin-left: 16px;
+}
+
+.rates
+{
+  float: right;
+  margin-right: 16px;
+}
+
+.mat-divider
+{
+  margin-top: 16px;
+}
